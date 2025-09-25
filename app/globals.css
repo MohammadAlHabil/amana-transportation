@@ -1,5 +1,52 @@
 @import "tailwindcss";
 
+/* Leaflet CSS import */
+@import "leaflet/dist/leaflet.css";
+
+/* Custom marker styles */
+.custom-bus-marker,
+.custom-stop-marker,
+.custom-next-stop-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Ensure leaflet popup styling works well */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .leaflet-control-container {
+    font-size: 14px;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +70,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button:not([disabled]) {
+  cursor: pointer;
 }
